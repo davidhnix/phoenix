@@ -1,0 +1,27 @@
+spring:
+  jackson.serialization.indent_output: true
+  datasource:
+    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: EST5EDT
+
+logging:
+  pattern.console: "%-5level %logger{25} : %msg%n"
+  level:
+    org.springframework: INFO
+
+flyway:
+  locations: db/migration/h2/common
+  enabled: true
+  baseline-on-migration: true
+  user: sa
