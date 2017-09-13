@@ -1,0 +1,2 @@
+flyway:
+  locations: db/migration/h2/common,db/migration/h2/test
